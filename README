@@ -1,0 +1,51 @@
+This is an implementation of the Full Stack Engineer Technical Challenge Video Store for my Avela interview
+
+I generated skeleton for the frontend code using npx create-react-app. For the backend I am using
+django + django rest framework.
+
+I used django + react because this is what I am most comfortable with.
+
+Before actually deploying this I would write tests and set up a full feature db. Depending on how much this
+codebase is gonna grow, I would reorganize the code. For example I would not add all models into models.py
+instead I would create a separate file for each model.
+
+The UI really doesn't look great. I would put significant effort into making it look prettier. I would also
+probably add a modal or a different experience for adding new movies. There are also definitely accessibility
+problems with how the UI is implemented
+
+To manage local dev, I created a virtualenv. I would likely use docker if I were to actually set this up
+for multiple devs to use.
+
+
+Important files:
+
+backend:
+
+db.sqlite3
+    The sqlite db
+    note: for a real prod app I would use a full feature db
+
+models.py
+    The orm declaration of our Movie table
+
+migrations/0001_initial.py
+    sql migration to actually add the Movie table
+    note: this file could renamed to something more informative
+
+views.py
+    Contains code for all the endpoints needed for operations on movies
+
+serializers.py:
+    code needed to serialize and deserialize the Movie data
+
+
+frontend:
+
+MovieList.js
+    Component containing the list of movies and the input field for new movies.
+
+Movie.js
+    Component to display and like an individual movie
+
+MovieList.css
+    All the css for the frontend
